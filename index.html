@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nischay K | Power BI Portfolio</title>
+  <meta name="description" content="Power BI portfolio – automotive/manufacturing dashboards, OLAP financial forecasting, and supply chain analytics." />
+  <style>
+    :root{
+      --bg:#0b1220; --bg2:#0d1628; --card:#0f1a30; --ink:#e8eefc; --muted:#a5b8d8;
+      --line:#203454; --accent:#ffd23f; --accent2:#73e2a7;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:radial-gradient(1200px 620px at 20% -10%,#0e1a33 0%,var(--bg) 40%);color:var(--ink);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.55}
+    .wrap{max-width:1120px;margin:0 auto;padding:28px}
+    header{display:flex;gap:28px;align-items:flex-start;justify-content:space-between;padding:14px 0 6px}
+    h1{margin:.2rem 0;font-size:34px;letter-spacing:.2px}
+    p.sub{margin:.35rem 0;color:var(--muted)}
+    .badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+    .badge{background:linear-gradient(180deg,#142341,#0f1a30);border:1px solid var(--line);color:var(--muted);border-radius:10px;padding:6px 10px;font-size:12px}
+    .actions{display:flex;gap:10px;flex-wrap:wrap}
+    .btn{display:inline-block;padding:10px 14px;border-radius:10px;border:1px solid #274062;text-decoration:none;color:var(--ink);background:linear-gradient(180deg,#11203c,#0d1a2e)}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px;margin-top:16px}
+    .card{background:linear-gradient(180deg,#0f1729 0%,#0e1524 100%);border:1px solid var(--line);border-radius:14px;padding:18px;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+    .card h3{margin:.2rem 0 .5rem;font-size:18px}
+    .card .sub{font-size:14px}
+    .col-6{grid-column:span 6}
+    .col-12{grid-column:span 12}
+    .kpis{display:flex;gap:12px;flex-wrap:wrap;margin:8px 0 2px}
+    .kpi{background:#101a2d;border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+    .kpi .label{color:var(--muted);font-size:12px}
+    .kpi .value{font-size:18px;font-weight:700;color:var(--accent)}
+    footer{color:var(--muted);text-align:center;padding:30px 0 10px;font-size:13px}
+    .chip{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border-radius:999px;border:1px solid var(--line);background:#0f1a30;color:var(--muted);font-size:12px}
+    @media (max-width: 880px){.col-6{grid-column:span 12} header{flex-direction:column;}}
+    svg{width:100%;height:auto;display:block;border-radius:10px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div>
+        <h1>Power BI Portfolio — Nischay K</h1>
+        <p class="sub">Data Analyst / Power BI Developer • Power BI • DAX • SQL • Azure • Automotive & Manufacturing</p>
+        <div class="badges">
+          <span class="badge">Power BI Data Analyst Associate</span>
+          <span class="badge">Azure Data Engineer Associate</span>
+          <span class="badge">SQL Server Database Development</span>
+        </div>
+      </div>
+    </header>
+
+    <nav style="margin-top:14px;margin-bottom:10px;display:flex;gap:10px;flex-wrap:wrap"><a class="btn" href="#dash-quality">Quality Dashboard</a><a class="btn" href="#dash-finance">Financial Dashboard</a><a class="btn" href="#dash-supply">Supply Chain Dashboard</a></nav>
+
+<section id="dash-quality" class="card col-12" style="margin:0 0 18px 0">
+  <h3 style="margin-bottom:6px">Automotive Quality — Dashboard</h3>
+  <p class="sub">Looks and feels like a Power BI page with KPIs, slicers and charts. (Static demo for portfolio.)</p>
+  <div class="kpis">
+    <div class="kpi"><div class="label">Defect PPM</div><div class="value">210</div></div>
+    <div class="kpi"><div class="label">Warranty Claims (30d)</div><div class="value">↓ 18%</div></div>
+    <div class="kpi"><div class="label">First‑Pass Yield</div><div class="value">97.4%</div></div>
+    <div class="kpi"><div class="label">Plants</div><div class="value">30+</div></div>
+  </div>
+  <div style="display:flex;gap:10px;flex-wrap:wrap;margin:10px 0 14px">
+    <span class="chip">Plant: All</span>
+    <span class="chip">Component: Seat Frame</span>
+    <span class="chip">Week: Last 12</span>
+    <span class="chip">Defect Code: Top 5</span>
+  </div>
+  <div class="grid">
+    <div class="col-6">
+      <svg viewBox="0 0 640 360" role="img" aria-label="Defect Rate by Component (PPM)">
+        <rect x="0" y="0" width="640" height="360" fill="#0d1628"/>
+        <text x="20" y="28" fill="#e8eefc" font-size="16">Defect Rate by Component (PPM)</text>
+        <g transform="translate(60,60)">
+          <line x1="0" y1="260" x2="520" y2="260" stroke="#203454"/>
+          <line x1="0" y1="0" x2="0" y2="260" stroke="#203454"/>
+          <g fill="#ffd23f">
+            <rect x="20" y="60" width="70" height="200"/>
+            <rect x="130" y="140" width="70" height="120"/>
+            <rect x="240" y="200" width="70" height="60"/>
+            <rect x="350" y="120" width="70" height="140"/>
+            <rect x="460" y="160" width="70" height="100"/>
+          </g>
+          <g fill="#a5b8d8" font-size="12">
+            <text x="30" y="280">Seat Frame</text>
+            <text x="150" y="280">Foam</text>
+            <text x="255" y="280">Trim</text>
+            <text x="356" y="280">Harness</text>
+            <text x="468" y="280">Rails</text>
+          </g>
+        </g>
+      </svg>
+    </div>
+    <div class="col-6">
+      <svg viewBox="0 0 640 360" role="img" aria-label="Top Defect Codes — Pareto">
+        <rect x="0" y="0" width="640" height="360" fill="#0d1628"/>
+        <text x="20" y="28" fill="#e8eefc" font-size="16">Top Defect Codes — Pareto</text>
+        <g transform="translate(60,60)">
+          <line x1="0" y1="260" x2="520" y2="260" stroke="#203454"/>
+          <g fill="#6ea8fe">
+            <rect x="10" y="160" width="60" height="100"/>
+            <rect x="90" y="120" width="60" height="140"/>
+            <rect x="170" y="90" width="60" height="170"/>
+            <rect x="250" y="200" width="60" height="60"/>
+            <rect x="330" y="220" width="60" height="40"/>
+          </g>
+          <polyline points="40,220 120,160 200,120 280,90 360,75" fill="none" stroke="#73e2a7" stroke-width="3"/>
+          <g fill="#a5b8d8" font-size="12">
+            <text x="18" y="280">D01</text>
+            <text x="98" y="280">D02</text>
+            <text x="178" y="280">D03</text>
+            <text x="258" y="280">D04</text>
+            <text x="338" y="280">D05</text>
+          </g>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section id="dash-finance" class="card col-12" style="margin:0 0 18px 0">
+  <h3 style="margin-bottom:6px">Financial Forecasting — Dashboard</h3>
+  <p class="sub">SSAS OLAP integrated with Power BI. Scenario analysis, drill-through, and variance tracking.</p>
+  <div class="kpis">
+    <div class="kpi"><div class="label">Revenue (MTD)</div><div class="value">$1.42M</div></div>
+    <div class="kpi"><div class="label">Forecast vs Plan</div><div class="value">+2.4%</div></div>
+    <div class="kpi"><div class="label">Query Time</div><div class="value">↓ 30%</div></div>
+    <div class="kpi"><div class="label">Margins</div><div class="value">18.7%</div></div>
+  </div>
+  <div style="display:flex;gap:10px;flex-wrap:wrap;margin:10px 0 14px">
+    <span class="chip">Region: All</span>
+    <span class="chip">Scenario: Forecast</span>
+    <span class="chip">Time: YTD</span>
+  </div>
+  <div class="grid">
+    <div class="col-6">
+      <svg viewBox="0 0 640 360" role="img" aria-label="Monthly Revenue Forecast (USD)">
+        <rect x="0" y="0" width="640" height="360" fill="#0d1628"/>
+        <text x="20" y="28" fill="#e8eefc" font-size="16">Monthly Revenue Forecast (USD)</text>
+        <g transform="translate(60,50)">
+          <polyline points="0,220 90,200 180,210 270,170 360,160 450,150" fill="none" stroke="#73e2a7" stroke-width="3"/>
+          <g fill="#73e2a7">
+            <circle cx="0" cy="220" r="5"/><circle cx="90" cy="200" r="5"/><circle cx="180" cy="210" r="5"/><circle cx="270" cy="170" r="5"/><circle cx="360" cy="160" r="5"/><circle cx="450" cy="150" r="5"/>
+          </g>
+          <g fill="#a5b8d8" font-size="12" transform="translate(0,240)">
+            <text x="-6" y="18">Jan</text>
+            <text x="84" y="18">Feb</text>
+            <text x="174" y="18">Mar</text>
+            <text x="264" y="18">Apr</text>
+            <text x="354" y="18">May</text>
+            <text x="444" y="18">Jun</text>
+          </g>
+        </g>
+      </svg>
+    </div>
+    <div class="col-6">
+      <svg viewBox="0 0 640 360" role="img" aria-label="Forecast vs Plan Variance">
+        <rect x="0" y="0" width="640" height="360" fill="#0d1628"/>
+        <text x="20" y="28" fill="#e8eefc" font-size="16">Forecast vs Plan Variance</text>
+        <g transform="translate(60,60)">
+          <line x1="0" y1="260" x2="520" y2="260" stroke="#203454"/>
+          <g>
+            <rect x="40" y="160" width="60" height="100" fill="#73e2a7"/>
+            <rect x="140" y="190" width="60" height="70" fill="#73e2a7"/>
+            <rect x="240" y="210" width="60" height="50" fill="#6ea8fe"/>
+            <rect x="340" y="120" width="60" height="140" fill="#ffd23f"/>
+            <rect x="440" y="230" width="60" height="30" fill="#c7b5ff"/>
+          </g>
+          <g fill="#a5b8d8" font-size="12">
+            <text x="50" y="280">Q1</text>
+            <text x="150" y="280">Q2</text>
+            <text x="250" y="280">Q3</text>
+            <text x="350" y="280">Q4</text>
+            <text x="450" y="280">Adj</text>
+          </g>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section id="dash-supply" class="card col-12" style="margin:0 0 22px 0">
+  <h3 style="margin-bottom:6px">Supply Chain — Dashboard</h3>
+  <p class="sub">End‑to‑end view of vendor performance, on‑time delivery, and inventory risk.</p>
+  <div class="kpis">
+    <div class="kpi"><div class="label">On‑Time Delivery</div><div class="value">93%</div></div>
+    <div class="kpi"><div class="label">Expedites (30d)</div><div class="value">↓ 22%</div></div>
+    <div class="kpi"><div class="label">Vendors</div><div class="value">120</div></div>
+    <div class="kpi"><div class="label">Backorder</div><div class="value">↓ 14%</div></div>
+  </div>
+  <div style="display:flex;gap:10px;flex-wrap:wrap;margin:10px 0 14px">
+    <span class="chip">Region: NA</span>
+    <span class="chip">Supplier Tier: 1</span>
+    <span class="chip">Material: Seating</span>
+  </div>
+  <div class="grid">
+    <div class="col-6">
+      <svg viewBox="0 0 640 360" role="img" aria-label="On‑Time Delivery Share">
+        <rect x="0" y="0" width="640" height="360" fill="#0d1628"/>
+        <text x="20" y="28" fill="#e8eefc" font-size="16">On‑Time Delivery Share</text>
+        <g transform="translate(320,200)">
+          <circle r="90" fill="none" stroke="#ffd23f" stroke-width="60" stroke-dasharray="220 565" transform="rotate(-90)"/>
+          <circle r="90" fill="none" stroke="#73e2a7" stroke-width="60" stroke-dasharray="190 595" transform="rotate(50)"/>
+          <circle r="90" fill="none" stroke="#6ea8fe" stroke-width="60" stroke-dasharray="125 660" transform="rotate(140)"/>
+          <circle r="90" fill="none" stroke="#c7b5ff" stroke-width="60" stroke-dasharray="95 690" transform="rotate(210)"/>
+        </g>
+        <g fill="#a5b8d8" font-size="12" transform="translate(70,320)">
+          <text>Supplier A 35%</text>
+          <text x="150">Supplier B 30%</text>
+          <text x="300">Supplier C 20%</text>
+          <text x="430">Supplier D 15%</text>
+        </g>
+      </svg>
+    </div>
+    <div class="col-6">
+      <svg viewBox="0 0 640 360" role="img" aria-label="Inventory Risk Heat">
+        <rect x="0" y="0" width="640" height="360" fill="#0d1628"/>
+        <text x="20" y="28" fill="#e8eefc" font-size="16">Inventory Risk Heat</text>
+        <g transform="translate(80,60)">
+          <g>
+            <rect x="0" y="0" width="120" height="80" fill="#11203c" stroke="#203454"/>
+            <rect x="130" y="0" width="120" height="80" fill="#142b4f" stroke="#203454"/>
+            <rect x="260" y="0" width="120" height="80" fill="#0f1a30" stroke="#203454"/>
+            <rect x="390" y="0" width="120" height="80" fill="#1b2a49" stroke="#203454"/>
+            <rect x="0" y="90" width="120" height="80" fill="#142b4f" stroke="#203454"/>
+            <rect x="130" y="90" width="120" height="80" fill="#1b2a49" stroke="#203454"/>
+            <rect x="260" y="90" width="120" height="80" fill="#11203c" stroke="#203454"/>
+            <rect x="390" y="90" width="120" height="80" fill="#0f1a30" stroke="#203454"/>
+          </g>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="grid" style="margin-top:16px;">
+      <div class="card col-12">
+        <h3>Overview</h3>
+        <p class="sub">I turn raw operational data into actionable insights using Power BI, DAX, and SQL. Below are three representative projects aligned with automotive/manufacturing analytics.</p>
+        <div class="kpis">
+          <div class="kpi"><div class="label">Root-cause analysis</div><div class="value">40% faster</div></div>
+          <div class="kpi"><div class="label">OLAP query times</div><div class="value">↓ 30%</div></div>
+          <div class="kpi"><div class="label">Manual reporting</div><div class="value">↓ 50%</div></div>
+          <div class="kpi"><div class="label">Last updated</div><div class="value" id="updated"></div></div>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:6px">
+          <span class="chip">Automotive quality</span>
+          <span class="chip">Financial forecasting</span>
+          <span class="chip">Supply chain analytics</span>
+          <span class="chip">Data modeling & DAX</span>
+        </div>
+      </div>
+
+      <!-- Project 1: Automotive Quality Analytics (inline SVG bar chart) -->
+      <div class="card col-6">
+        <h3>Automotive Quality Analytics</h3>
+        <p class="sub">SQL Server • Power BI • DAX • Power Query • Azure</p>
+        <svg viewBox="0 0 640 360" role="img" aria-label="Defect Rate by Component (PPM)">
+          <rect x="0" y="0" width="640" height="360" fill="#0d1628"/>
+          <text x="20" y="28" fill="#e8eefc" font-size="16">Defect Rate by Component (PPM)</text>
+          <g transform="translate(60,60)">
+            <!-- axes -->
+            <line x1="0" y1="260" x2="520" y2="260" stroke="#203454"/>
+            <line x1="0" y1="0" x2="0" y2="260" stroke="#203454"/>
+            <!-- bars -->
+            <g fill="#ffd23f">
+              <rect x="20" y="60" width="70" height="200"/>
+              <rect x="130" y="140" width="70" height="120"/>
+              <rect x="240" y="200" width="70" height="60"/>
+              <rect x="350" y="120" width="70" height="140"/>
+              <rect x="460" y="160" width="70" height="100"/>
+            </g>
+            <!-- labels -->
+            <g fill="#a5b8d8" font-size="12">
+              <text x="30" y="280">Seat Frame</text>
+              <text x="150" y="280">Foam</text>
+              <text x="255" y="280">Trim</text>
+              <text x="356" y="280">Harness</text>
+              <text x="468" y="280">Rails</text>
+            </g>
+          </g>
+        </svg>
+        <p>Scalable dashboards for defects & warranty claims. Enabled engineers to drill into component-level trends and accelerated <b>root-cause analysis by 40%</b>.</p>
+      </div>
+
+      <!-- Project 2: Financial Forecasting (inline SVG line chart) -->
+      <div class="card col-6">
+        <h3>Financial Forecasting with OLAP &amp; Power BI</h3>
+        <p class="sub">SSAS OLAP • Power BI • SQL</p>
+        <svg viewBox="0 0 640 360" role="img" aria-label="Monthly Revenue Forecast (USD)">
+          <rect x="0" y="0" width="640" height="360" fill="#0d1628"/>
+          <text x="20" y="28" fill="#e8eefc" font-size="16">Monthly Revenue Forecast (USD)</text>
+          <g transform="translate(60,50)">
+            <polyline points="0,220 90,200 180,210 270,170 360,160 450,150" fill="none" stroke="#73e2a7" stroke-width="3"/>
+            <g fill="#73e2a7">
+              <circle cx="0" cy="220" r="5"/><circle cx="90" cy="200" r="5"/><circle cx="180" cy="210" r="5"/><circle cx="270" cy="170" r="5"/><circle cx="360" cy="160" r="5"/><circle cx="450" cy="150" r="5"/>
+            </g>
+            <g fill="#a5b8d8" font-size="12" transform="translate(0,240)">
+              <text x="-6" y="18">Jan</text>
+              <text x="84" y="18">Feb</text>
+              <text x="174" y="18">Mar</text>
+              <text x="264" y="18">Apr</text>
+              <text x="354" y="18">May</text>
+              <text x="444" y="18">Jun</text>
+            </g>
+          </g>
+        </svg>
+        <p>OLAP cube on financial transactions with Power BI visuals for scenario analysis. Performance tuning cut <b>query times by 30%</b> and improved executive drill-through.</p>
+      </div>
+
+      <!-- Project 3: Supply Chain (inline SVG pie) -->
+      <div class="card col-6">
+        <h3>Supply Chain BI Dashboards</h3>
+        <p class="sub">Azure Data Factory • SQL Server • Power BI • DAX</p>
+        <svg viewBox="0 0 640 360" role="img" aria-label="On-Time Delivery Share">
+          <defs>
+            <linearGradient id="g1" x1="0" x2="0" y1="0" y2="1">
+              <stop offset="0%" stop-color="#ffd23f"/>
+              <stop offset="100%" stop-color="#b89b2d"/>
+            </linearGradient>
+            <linearGradient id="g2" x1="0" x2="0" y1="0" y2="1">
+              <stop offset="0%" stop-color="#73e2a7"/>
+              <stop offset="100%" stop-color="#4dbb84"/>
+            </linearGradient>
+            <linearGradient id="g3" x1="0" x2="0" y1="0" y2="1">
+              <stop offset="0%" stop-color="#6ea8fe"/>
+              <stop offset="100%" stop-color="#4a7bd6"/>
+            </linearGradient>
+            <linearGradient id="g4" x1="0" x2="0" y1="0" y2="1">
+              <stop offset="0%" stop-color="#c7b5ff"/>
+              <stop offset="100%" stop-color="#9a86ff"/>
+            </linearGradient>
+          </defs>
+          <rect x="0" y="0" width="640" height="360" fill="#0d1628"/>
+          <text x="20" y="28" fill="#e8eefc" font-size="16">On‑Time Delivery Share</text>
+          <g transform="translate(320,200)">
+            <!-- simple donut using circles (visual only) -->
+            <circle r="90" fill="none" stroke="url(#g1)" stroke-width="60" stroke-dasharray="220 565" transform="rotate(-90)"/>
+            <circle r="90" fill="none" stroke="url(#g2)" stroke-width="60" stroke-dasharray="190 595" transform="rotate(50)"/>
+            <circle r="90" fill="none" stroke="url(#g3)" stroke-width="60" stroke-dasharray="125 660" transform="rotate(140)"/>
+            <circle r="90" fill="none" stroke="url(#g4)" stroke-width="60" stroke-dasharray="95 690" transform="rotate(210)"/>
+          </g>
+          <g fill="#a5b8d8" font-size="12" transform="translate(70,320)">
+            <text>Supplier A 35%</text>
+            <text x="150">Supplier B 30%</text>
+            <text x="300">Supplier C 20%</text>
+            <text x="430">Supplier D 15%</text>
+          </g>
+        </svg>
+        <p>Integrated supplier, logistics, and production datasets. Vendor performance dashboards and alerts reduced <b>manual reporting by 50%</b>.</p>
+      </div>
+
+      <!-- Skills snapshot -->
+      <div class="card col-6">
+        <h3>Technical Skills Snapshot</h3>
+        <p class="sub">Primary tools and platforms</p>
+        <svg viewBox="0 0 640 360" role="img" aria-label="Skills bar chart">
+          <rect x="0" y="0" width="640" height="360" fill="#0d1628"/>
+          <g transform="translate(70,40)" fill="#ffd23f">
+            <rect x="0" y="0" width="520" height="32"/>
+            <rect x="0" y="60" width="490" height="32"/>
+            <rect x="0" y="120" width="490" height="32"/>
+            <rect x="0" y="180" width="380" height="32"/>
+            <rect x="0" y="240" width="440" height="32"/>
+          </g>
+          <g fill="#a5b8d8" font-size="12" transform="translate(70,40)">
+            <text x="-60" y="18">Power BI</text>
+            <text x="-60" y="78">DAX</text>
+            <text x="-60" y="138">SQL</text>
+            <text x="-60" y="198">Python</text>
+            <text x="-60" y="258">Azure</text>
+          </g>
+        </svg>
+        <p>Power BI (Expert), DAX (Advanced), SQL (Advanced), Python (Intermediate), Azure (Intermediate–Advanced).</p>
+      </div>
+    </section>
+
+    <footer>
+      <p>Contact: <a href="mailto:nischaykamshtty@gmail.com" style="color:inherit">nischaykamshtty@gmail.com</a></span> Nischay K</p>
+    </footer>
+  </div>
+</body>
+</html>
